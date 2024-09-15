@@ -1,3 +1,4 @@
+
 //-----------------------------------------------------------------------
 // Yet Another Parameterized Projectbox generator
 //
@@ -60,10 +61,10 @@ printDisplayClips     = true;
 pcbLength           = 60; // front to back (X axis)
 pcbWidth            = 42; // side to side (Y axis)
 pcbThickness        = 1.6; 
-standoffHeight      = 1.0; //-- How much the PCB needs to be raised from the base to leave room for solderings and whatnot
+standoffHeight      = 2.0; //-- How much the PCB needs to be raised from the base to leave room for solderings and whatnot
 standoffDiameter    = 7;
 standoffPinDiameter = 2.4;
-standoffHoleSlack   = 0.4;
+standoffHoleSlack   = 0.4; 
 
 //===================================================================
 // *** PCBs ***
@@ -342,9 +343,13 @@ cutoutsLeft =
 [
 ];
 
-cutoutsRight = generateLinearHoles(0, 5, 11.75, 16);
-
-
+//cutoutsRight = generateLinearHoles(0, 5, 11.75, 16);
+//cutoutsRight = generateLinearHoles(0, 5, 11.75, 16, shellLength-10, yappCoordBoxInside);
+//cutoutsRight = generateLinearHoles(5, 5, 11.75, 16, shellLength, 2, yappCoordBoxInside);
+//cutoutsRight = generateLinearHoles(5, 5, 11.75, 16, shellLength-15, 2, yappCoordBoxInside);
+//cutoutsRight = generateLinearHoles(5, 5, 11.75, 16, shellLength, 2, yappCoordBoxInside);
+//cutoutsRight = generateLinearHoles(5.9, 5, 11.75, 16, shellLength-12, 2, yappCoordBoxInside);
+cutoutsRight = generateLinearHoles(5.9, 5, 11.75, 16, shellLength-15, 2, 90, yappCoordBoxInside);
 
 //===================================================================
 //  *** Snap Joins ***
@@ -363,7 +368,7 @@ cutoutsRight = generateLinearHoles(0, 5, 11.75, 16);
 //-------------------------------------------------------------------
 snapJoins   =   
 [
-  [5, 5, yappLeft, yappRight, yappSymmetric]
+  [25, 5, yappLeft, yappRight, yappSymmetric]
 ];
 
 //===================================================================
